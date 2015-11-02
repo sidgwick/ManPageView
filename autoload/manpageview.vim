@@ -83,7 +83,9 @@ if !exists("g:manpageview_pgm_pl")
  let g:manpageview_pgm_pl     = "perldoc"
  let g:manpageview_options_pl = ";-f;-q"
 endif
-if !exists("g:manpageview_pgm_php") && executable("links")
+if !exists("g:manpageview_pgm_php") && executable("pman")
+ let g:manpageview_pgm_php     = "pman"
+elseif !exists("g:manpageview_pgm_php") && executable("links")
 " call Decho("installed php help support via manpageview")
  let g:manpageview_pgm_php     = "links -dump http://www.php.net/"
  let g:manpageview_syntax_php  = "manphp"
